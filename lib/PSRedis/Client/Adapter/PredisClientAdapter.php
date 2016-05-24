@@ -81,9 +81,10 @@ class PredisClientAdapter
     private function getPredisClientParameters()
     {
         return array(
-            'scheme'    => 'tcp',
-            'host'      => $this->ipAddress,
-            'port'      => $this->port,
+            'scheme'     => 'tcp',
+            'host'       => $this->ipAddress,
+            'port'       => $this->port,
+            'persistent' => true
         );
     }
 
