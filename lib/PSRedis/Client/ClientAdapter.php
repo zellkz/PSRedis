@@ -26,6 +26,13 @@ interface ClientAdapter {
     public function setPort($port);
 
     /**
+     * Password for redis server
+     * @param $password
+     * @return mixed
+     */
+    public function setPassword($password);
+
+    /**
      * Proxy to connection mechanism of the redis client
      * @return mixed
      */

@@ -80,11 +80,17 @@ class PredisClientAdapter
 
     private function getPredisClientParameters()
     {
-        return array(
-            'scheme'    => 'tcp',
-            'host'      => $this->ipAddress,
-            'port'      => $this->port,
+        $ret = array(
+            'scheme'     => 'tcp',
+            'host'       => $this->ipAddress,
+            'port'       => $this->port
         );
+
+        if ($this->clientType === Client::TYPE_REDIS) {
+            $ret['password'] = $this->password;
+        }
+
+        return $ret;
     }
 
     /**

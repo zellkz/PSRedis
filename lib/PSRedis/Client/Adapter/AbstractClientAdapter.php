@@ -15,6 +15,8 @@ abstract class AbstractClientAdapter
 
     protected $port;
 
+    protected $password = null;
+
     protected $isConnected = false;
 
     public function setIpAddress($ipAddress)
@@ -25,6 +27,11 @@ abstract class AbstractClientAdapter
     public function setPort($port)
     {
         $this->port = $port;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
     public function isConnected()
